@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AuthService {
 
-  public userSubject: BehaviorSubject<User>;
+  userSubject: BehaviorSubject<User>;
 
   constructor(private http: HttpClient, private router: Router) {
     this.userSubject = new BehaviorSubject<User>(null);
