@@ -11,13 +11,15 @@ import { AuthInterceptor } from './interceptor/auth.intercptor';
 import { MarketsComponent } from './components/markets/markets.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    MarketsComponent
+    MarketsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
