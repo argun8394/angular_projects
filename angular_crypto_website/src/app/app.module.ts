@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptor/auth.intercptor';
 import { MarketsComponent } from './components/markets/markets.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
+    NgbModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,
