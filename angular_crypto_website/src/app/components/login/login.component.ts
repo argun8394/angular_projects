@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.auth.loginUser(identifier, password).subscribe(
       (res) => {
         localStorage.setItem('token', res.token);
-        // this.router.navigate(['/home'])
+        this.router.navigate(['/marketler'])
         console.log(res.token);
         this.token = localStorage.getItem('token');
       },
