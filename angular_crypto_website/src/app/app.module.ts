@@ -12,6 +12,7 @@ import { MarketsComponent } from './components/markets/markets.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileComponent } from './components/profile/profile.component';
+import { BalanceComponent } from './components/balance/balance.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     HeaderComponent,
     LoginComponent,
     MarketsComponent,
-    ProfileComponent
+    ProfileComponent,
+    BalanceComponent
   ],
   imports: [
     BrowserModule,
