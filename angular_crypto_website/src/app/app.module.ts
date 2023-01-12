@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BalanceComponent } from './components/balance/balance.component';
+import { OpenOrdersComponent } from './components/open-orders/open-orders.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BalanceComponent } from './components/balance/balance.component';
     LoginComponent,
     MarketsComponent,
     ProfileComponent,
-    BalanceComponent
+    BalanceComponent,
+    OpenOrdersComponent
   ],
   imports: [
     BrowserModule,

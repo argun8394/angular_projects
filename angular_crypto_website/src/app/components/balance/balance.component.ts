@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Balance } from 'src/app/models/balance.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class BalanceComponent implements OnInit {
 
-  balance : any ;
+  balance : Balance[] ;
+  balanceData : Balance ;
 
   constructor(private api : ApiService) { }
 
@@ -17,14 +19,8 @@ export class BalanceComponent implements OnInit {
   }
 
   balances() {
-
-      const balanceData = {
-        assetCode: '',
-        availableAmount: 0
-      } ;
-      this.api.getBalances(balanceData).subscribe((response) => {
+      this.api.getBalances(this.balanceData).subscribe((response) => {
         this.balance = response.balances
-
         console.log(this.balance);
       });
   }

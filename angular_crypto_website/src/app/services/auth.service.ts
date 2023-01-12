@@ -10,6 +10,9 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AuthService {
 
+
+   url: string = `${environment.apiurl}auth/login`;
+
   userSubject: BehaviorSubject<User>;
 
   constructor(private http: HttpClient, private router: Router) {
@@ -17,10 +20,9 @@ export class AuthService {
   }
 
   loginUser(identifier: string, password: string) {
-    const url: string = `${environment.apiurl}auth/login`;
     const user: any = { identifier: identifier, password: password };
 
-    return this.http.post<any>(url, user)
+    return this.http.post<any>(this.url, user)
   }
 
   logoutUser() {
