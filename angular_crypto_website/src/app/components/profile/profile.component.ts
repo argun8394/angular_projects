@@ -13,7 +13,9 @@ export class ProfileComponent implements OnInit {
 
   constructor(private api: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.onCreatePost()
+  }
 
   onCreatePost() {
     const postData: Profil = {

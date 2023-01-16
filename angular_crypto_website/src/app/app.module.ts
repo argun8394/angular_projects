@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { OpenOrdersComponent } from './components/open-orders/open-orders.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { OpenOrdersComponent } from './components/open-orders/open-orders.compon
     MarketsComponent,
     ProfileComponent,
     BalanceComponent,
-    OpenOrdersComponent
+    OpenOrdersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
