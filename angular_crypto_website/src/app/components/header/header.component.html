@@ -1,16 +1,14 @@
-<div class="container">
+<div class="container-fluid">
   <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg> -->
-      <span class="fs-4">Angular cryp</span>
-    </a>
+    <span class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+      <img class="logo" src="../../../assets/bitlo_logo_white_@2x.webp">
+    </span>
 
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#"routerLink="marketler"  class="nav-link " aria-current="page">markets</a></li>
-      <li class="nav-item"><a href="#" class="nav-link " aria-current="page">Login</a></li>
-      <li class="nav-item"><a routerLink="profil" class="nav-link " aria-current="page">Profile</a></li>
-      <li class="nav-item"><a href="#" class="nav-link " active >Login</a></li>
-      <!-- <li class="nav-item"><a routerLink="bakiye" class="nav-link " aria-current="page">Bakiye</a></li> -->
+      <li class="nav-item"><a routerlink="/" class="nav-link"  routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
+      <li class="nav-item"><a routerLink="marketler" class="nav-link "  routerLinkActive="active" ariaCurrentWhenActive="page">markets</a></li>
+      <li class="nav-item"><a routerLink="profil" class="nav-link "  routerLinkActive="active" ariaCurrentWhenActive="page">Profile</a></li>
+      <li class="nav-item"><a routerLink="login" class="nav-link "  routerLinkActive="active" ariaCurrentWhenActive="page">Login</a></li>
       <li class="nav-item"><a href="#" class="nav-link ms-2" (click)="logout()">Logout</a></li>
 
     </ul>

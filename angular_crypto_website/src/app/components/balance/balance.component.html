@@ -1,21 +1,22 @@
-<div class="container">
+<div class="table-container">
   <h3>Bakiye</h3>
 
-    <table class="table table-striped">
-      <thead>
-    <tr>
-      <th scope="col">Asset Logo </th>
-      <th scope="col">Asset Code</th>
-      <th scope="col">Available Amount </th>
-      <th scope="col">Available Amount TRY</th>
-  </thead>
-  <tbody  *ngFor="let item of balance">
-    <th>logo</th>
-    <th><h5>{{item.assetCode}}</h5></th>
-    <th>{{item.availableAmount}}</th>
-    <th>{{item.availableAmount}}</th>
-  </tbody>
-
-    </table>
-
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Asset Logo</th>
+        <th>Asset Code</th>
+        <th>Available Amount</th>
+        <th>Available Amount TRY</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of balance; let i = index">
+      <tr>
+        <td>logo</td>
+        <td>{{ item.assetCode }}</td>
+        <td>{{ item.availableAmount }}</td>
+        <td>{{ item.availableAmount }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

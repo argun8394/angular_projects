@@ -1,6 +1,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { OpenOrdersComponent } from './components/open-orders/open-orders.component';
 import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { HomeComponent } from './components/home/home.component';
     ProfileComponent,
     BalanceComponent,
     OpenOrdersComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     NgxPaginationModule,
     NgbModule,

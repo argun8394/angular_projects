@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/models/products.model';
 import { ApiService } from 'src/app/services/api.service';
+import { FilterService } from 'src/app/services/filter.service';
 
 @Component({
   selector: 'app-markets',
@@ -10,6 +11,8 @@ import { ApiService } from 'src/app/services/api.service';
 export class MarketsComponent implements OnInit {
 
   productList! : Products[] ;
+  searchKey: any;
+
   page : number = 0;
   count: number = 0;
   tableSize: number = 10;
@@ -18,18 +21,27 @@ export class MarketsComponent implements OnInit {
 
   displayedColumns: string[] = ['no', 'marketCode', 'currentQuote', 'change24h', 'change24hPercent', 'highestQuote24h', 'lowestQuote24h'];
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private filters: FilterService) { }
 
   ngOnInit(): void {
     this.fetchProducts()
+    // console.log(this.searchKey)
+
   }
 
   fetchProducts() {
     this.api.getProduct()
     .subscribe(res => { this.productList = res;
+
      console.log(this.productList)
      })
+     this.filters.search.subscribe((value) => {
+      this.searchKey = value;
+      console.log(this.searchKey)
+     })
+
   }
+
 
   onTableDataChange(event: any) {
     this.page = event;
@@ -41,4 +53,6 @@ export class MarketsComponent implements OnInit {
     this.page = 1;
     this.fetchProducts()
   }
+
+
 }

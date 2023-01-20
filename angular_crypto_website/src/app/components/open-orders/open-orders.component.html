@@ -1,29 +1,27 @@
 <div class="table-container">
-
-  <table class="table table-striped">
-      <thead>
-    <tr>
-
-      <th scope="col">marketCode</th>
-      <th scope="col">orderSide</th>
-      <th scope="col">orderDate</th>
-      <th scope="col">price</th>
-      <th scope="col">orderAmount</th>
-      <th scope="col">fillAmount</th>
-      <th scope="col">Fill percent</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let order of orderList ; let i = index">
-    <tr>
-      <td>{{order.marketCode}}</td>
-      <td>{{order.orderSide}}</td>
-      <td>{{order.orderDate}}</td>
-      <td>{{order.price}}</td>
-      <td>{{order.orderAmount}}</td>
-      <td>{{order.fillAmount}}</td>
-      <td>{{order.fillAmount / order.orderAmount}}</td>
-    </tr>
-     </tbody>
-
+  <h3>Açık Emirler</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>marketCode</th>
+        <th>orderSide</th>
+        <th>orderDate</th>
+        <th>price</th>
+        <th>orderAmount</th>
+        <th>fillAmount</th>
+        <th>Fill percent</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let order of orderList; let i = index">
+      <tr>
+        <td>{{ order.marketCode }}</td>
+        <td>{{ order.orderSide }}</td>
+        <td>{{ order.orderDate }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ order.orderAmount }}</td>
+        <td>{{ order.fillAmount }}</td>
+        <td>{{ order.fillAmount / order.orderAmount }}</td>
+      </tr>
+    </tbody>
   </table>
 </div>

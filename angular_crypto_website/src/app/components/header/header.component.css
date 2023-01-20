@@ -1,0 +1,13 @@
+.container-fluid {
+  background-color: #0a2363;
+  color: #ffffff;
+}
+
+ul li a {
+  color: #ffffff;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}

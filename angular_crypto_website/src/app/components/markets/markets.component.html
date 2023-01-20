@@ -1,46 +1,46 @@
 <div class="table-container">
-  <div>
-    <select (change)="onTableSizeChange($event)">
-      <option *ngFor="let size of tableSizes">
+
+  <div class="form-group ms-3 w-25">
+    <input type="text" class="form-control" [(ngModel)]="searchKey"  placeholder="search...">
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">no</th>
+        <th scope="col">marketCode</th>
+        <th scope="col">currentQuote</th>
+        <th scope="col">change24h</th>
+        <th scope="col">change24hPercent</th>
+        <th scope="col">highestQuote24h</th>
+        <th scope="col">lowestQuote24h</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of productList | filter: searchKey:'marketCode' | paginate: {
+    itemsPerPage: tableSize,
+    currentPage: page,
+    totalItems: count }; let i = index">
+      <tr>
+        <th scope="row">{{i}}</th>
+        <td>{{product.marketCode}}</td>
+        <td>{{product.currentQuote}}</td>
+        <td>{{product.change24h}}</td>
+        <td>{{product.change24hPercent}}</td>
+        <td>{{product.highestQuote24h}}</td>
+        <td>{{product.lowestQuote24h}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+  <div class=" ms-3 " >
+    <select class="tableSize" (change)="onTableSizeChange($event)">
+      <option  *ngFor="let size of tableSizes">
         {{size}}
       </option>
     </select>
   </div>
-  <table class="table table-striped">
-      <thead>
-    <tr>
-      <th scope="col">no</th>
-      <th scope="col">marketCode</th>
-      <th scope="col">currentQuote</th>
-      <th scope="col">change24h</th>
-      <th scope="col">change24hPercent</th>
-      <th scope="col">highestQuote24h</th>
-      <th scope="col">lowestQuote24h</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let product of productList | paginate: {
-    itemsPerPage: tableSize,
-    currentPage: page,
-    totalItems: count }; let i = index">
-    <tr>
-      <th scope="row">{{i}}</th>
-      <td>{{product.marketCode}}</td>
-      <td>{{product.currentQuote}}</td>
-      <td>{{product.change24h}}</td>
-      <td>{{product.change24hPercent}}</td>
-      <td>{{product.highestQuote24h}}</td>
-      <td>{{product.lowestQuote24h}}</td>
-    </tr>
-     </tbody>
-
-  </table>
   <div>
-    <pagination-controls
-      previousLabel="Prev"
-      nextLabel="Next"
-      (pageChange)="onTableDataChange($event)"
-      >
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
     </pagination-controls>
   </div>
 </div>
-
