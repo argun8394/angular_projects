@@ -21,17 +21,23 @@
     currentPage: page,
     totalItems: count }; let i = index">
       <tr>
-        <th scope="row">{{i}}</th>
-        <td>{{product.marketCode}}</td>
-        <td>{{product.currentQuote}}</td>
-        <td>{{product.change24h}}</td>
-        <td>{{product.change24hPercent}}</td>
-        <td>{{product.highestQuote24h}}</td>
-        <td>{{product.lowestQuote24h}}</td>
+        <td scope="row">{{i}}</td>
+         <td><a href=""> {{product.marketCode}}</a>  </td> <!--<a [routerLink]="['/market',product.marketCode]"></a> -->
+         <!-- {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
+         minIntegerDigits --- Ondalık noktadan önceki minimum tamsayı basamak sayısı. Varsayılan 1'dir.
+         minFractionDigits --- Ondalık noktadan sonraki minimum basamak sayısı. Varsayılan 0'dır.
+         maxFractionDigits --- Ondalık noktadan sonraki maksimum basamak sayısı. Varsayılan 3'tür.
+         -->
+        <td>{{product.currentQuote | number : '1.2-2'}}</td>
+        <td>{{product.change24h | number : '1.2-2'}}</td>
+        <td>{{product.change24hPercent | number : '1.2-2'}}</td>
+        <td>{{product.highestQuote24h | number : '1.2-2'}}</td>
+        <td>{{product.lowestQuote24h | number : '1.2-2'}}</td>
       </tr>
     </tbody>
 
   </table>
+
   <div class=" ms-3 " >
     <select class="tableSize" (change)="onTableSizeChange($event)">
       <option  *ngFor="let size of tableSizes">

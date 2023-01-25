@@ -17,10 +17,10 @@
         <td>{{ order.marketCode }}</td>
         <td>{{ order.orderSide }}</td>
         <td>{{ order.orderDate }}</td>
-        <td>{{ order.price }}</td>
-        <td>{{ order.orderAmount }}</td>
-        <td>{{ order.fillAmount }}</td>
-        <td>{{ order.fillAmount / order.orderAmount }}</td>
+        <td>{{ order.price | number : '1.2-2' }}</td>
+        <td>{{ order.orderAmount | number : '1.2-2' }}</td>
+        <td>{{ order.fillAmount | number : '1.2-2'}}</td>
+        <td>{{ order.fillAmount / order.orderAmount   | percent :'1.2-2'}}</td>
       </tr>
     </tbody>
   </table>

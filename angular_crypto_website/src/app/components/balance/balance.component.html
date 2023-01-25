@@ -14,8 +14,8 @@
       <tr>
         <td>logo</td>
         <td>{{ item.assetCode }}</td>
-        <td>{{ item.availableAmount }}</td>
-        <td>{{ item.availableAmount }}</td>
+        <td>{{ item.availableAmount | number : '1.2-2'}}</td>
+        <td>{{ item.availableAmount | number : '1.2-2'}}</td>
       </tr>
     </tbody>
   </table>
