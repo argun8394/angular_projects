@@ -4,12 +4,15 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Balance } from '../models/balance.model';
 import { Orders } from '../models/orders.model';
+import { Products } from '../models/products.model';
 import { Profil } from '../models/profile.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
+
 
   url = `${environment.apiurl}`;
   token : any = localStorage.getItem('token')
@@ -19,6 +22,8 @@ export class ApiService {
   getProduct(): Observable<any> {
     return this.http.get(`${this.url}markets`)
    }
+
+
 
    createPost(postData: Profil) {
     return this.http.post<any>(
@@ -58,5 +63,7 @@ export class ApiService {
       }
     );
   }
+
+
 
 }

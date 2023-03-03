@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Products } from 'src/app/models/products.model';
 import { ApiService } from 'src/app/services/api.service';
 import { FilterService } from 'src/app/services/filter.service';
@@ -10,7 +11,9 @@ import { FilterService } from 'src/app/services/filter.service';
 })
 export class MarketsComponent implements OnInit {
 
-  productList! : Products[] ;
+  markets:any;
+
+  productList : Products[] ;
   searchKey: any;
 
   page : number = 0;
@@ -21,23 +24,22 @@ export class MarketsComponent implements OnInit {
 
   displayedColumns: string[] = ['no', 'marketCode', 'currentQuote', 'change24h', 'change24hPercent', 'highestQuote24h', 'lowestQuote24h'];
 
-  constructor(private api: ApiService, private filters: FilterService) { }
+  constructor(private api: ApiService, private filters: FilterService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.fetchProducts()
     // console.log(this.searchKey)
-
-  }
+     }
 
   fetchProducts() {
     this.api.getProduct()
     .subscribe(res => { this.productList = res;
 
-     console.log(this.productList)
+      console.log(this.productList)
      })
      this.filters.search.subscribe((value) => {
       this.searchKey = value;
-      console.log(this.searchKey)
+      // console.log(this.searchKey)
      })
 
   }
@@ -53,6 +55,8 @@ export class MarketsComponent implements OnInit {
     this.page = 1;
     this.fetchProducts()
   }
+
+
 
 
 }

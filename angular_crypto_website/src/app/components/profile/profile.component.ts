@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  profil: any=[] ;
+  profil: any ;
 
   constructor(private api: ApiService) {}
 

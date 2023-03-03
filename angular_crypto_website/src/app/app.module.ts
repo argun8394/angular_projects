@@ -17,6 +17,7 @@ import { OpenOrdersComponent } from './components/open-orders/open-orders.compon
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     OpenOrdersComponent,
     HomeComponent,
     NotFoundComponent,
-    FilterPipe
+    FilterPipe,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

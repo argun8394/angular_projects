@@ -19,10 +19,10 @@
     <tbody *ngFor="let product of productList | filter: searchKey:'marketCode' | paginate: {
     itemsPerPage: tableSize,
     currentPage: page,
-    totalItems: count }; let i = index">
+    totalItems: count }; let i = index ">
       <tr>
-        <td scope="row">{{i}}</td>
-         <td><a href=""> {{product.marketCode}}</a>  </td> <!--<a [routerLink]="['/market',product.marketCode]"></a> -->
+        <td scope="row">{{i + 1}}</td>
+         <td><a [routerLink]="['/market',product.marketCode]" > {{product.marketCode}}</a>  </td>
          <!-- {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}
          minIntegerDigits --- Ondalık noktadan önceki minimum tamsayı basamak sayısı. Varsayılan 1'dir.
          minFractionDigits --- Ondalık noktadan sonraki minimum basamak sayısı. Varsayılan 0'dır.

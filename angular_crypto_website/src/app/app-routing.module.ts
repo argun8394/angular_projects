@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BalanceComponent } from './components/balance/balance.component';
+import { DetailComponent } from './components/detail/detail.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MarketsComponent } from './components/markets/markets.component';
@@ -15,7 +16,9 @@ const routes: Routes = [
   },
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'marketler', component: MarketsComponent },
+  { path: 'marketler', component: MarketsComponent},
+  {path: 'market/:marketCode', component:DetailComponent},
+
   {
     path: 'profil',
     component: ProfileComponent,
@@ -23,8 +26,8 @@ const routes: Routes = [
     children: [
       { path: 'bakiye', component: BalanceComponent, canActivate: [AuthGuard], },
       { path: 'acik-emirler', component: OpenOrdersComponent , canActivate: [AuthGuard],},
-    ],
-  },
+    ],},
+
   { path: '**', component: NotFoundComponent },
 ];
 

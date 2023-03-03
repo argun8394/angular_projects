@@ -9,8 +9,10 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class BalanceComponent implements OnInit {
 
-  balance : Balance[] ;
+  balance : any;
   balanceData : Balance ;
+  filterCheckbox: any;
+  // assetCode : string;
 
   constructor(private api : ApiService) { }
 
@@ -21,8 +23,27 @@ export class BalanceComponent implements OnInit {
   balances() {
       this.api.getBalances(this.balanceData).subscribe((response) => {
         this.balance = response.balances
-        console.log(this.balance);
+        console.log(typeof this.balance)
+        // this.filterCheckbox = response.balances
+        // this.balance.forEach((res:any)=>{
+        //   if(res.assetCode === "MATIC") {
+        //     this.assetCode = "MATIC"
+        //     console.log(this.assetCode)
+        //   }
+        //   return this.assetCode
+
+        // })
+        // console.log(this.balance);
       });
+  }
+
+  checkboxBalance(assett: string) {
+    this.filterCheckbox = this.balance.
+    filter((res:any) =>{
+      if(res.assetCode === assett || assett === '' ){
+        return res;
+      }
+    })
   }
 
 }

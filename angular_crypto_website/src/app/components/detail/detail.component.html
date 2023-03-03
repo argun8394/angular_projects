@@ -1,0 +1,26 @@
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">no</th>
+                    <th scope="col">marketCode</th>
+                    <th scope="col">currentQuote</th>
+                    <th scope="col">change24h</th>
+                    <th scope="col">change24hPercent</th>
+                    <th scope="col">highestQuote24h</th>
+                    <th scope="col">lowestQuote24h</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let product of markets ; let i = index">
+                  <tr>
+                    <th scope="row">{{i}}</th>
+                    <td>{{product.marketCode}}</td>
+                    <td>{{product.currentQuote}}</td>
+                    <td>{{product.change24h}}</td>
+                    <td>{{product.change24hPercent}}</td>
+                    <td>{{product.highestQuote24h}}</td>
+                    <td>{{product.lowestQuote24h}}</td>
+                  </tr>
+                </tbody>
+
+              </table>
+
