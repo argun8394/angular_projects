@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private router: Router,
     private api: ApiService,
+    private auth: AuthService,
     private toast: ToastrService
   ) {}
 
@@ -29,6 +31,7 @@ export class LoginComponent {
 
   submit(){
     this.api.getUser().subscribe((res: any) => {
+      this.auth.isLogin.next(true);
       const user = res.find((data: any) => {
         return data.email === this.loginForm.value.email && data.password === this.loginForm.value.password
         });
