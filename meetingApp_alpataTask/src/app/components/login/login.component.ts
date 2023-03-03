@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -26,18 +27,19 @@ export class LoginComponent {
     });
   }
 
-  submit() {
-    this.api.getUser().subscribe((res) => {
-      //     const user = res.find((a:any) => {
-      //       return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-      //     });
-      //     if(user) {
-      //       alert("Login success");
-      //       this.loginForm.reset();
-      //       this.router.navigate(['meetings'])
-      //     } else {
-      //       alert("user not found");
-      //     }
-    });
-  }
+  submit(){
+    this.api.getUser().subscribe((res: any) => {
+      const user = res.find((data: any) => {
+        return data.email === this.loginForm.value.email && data.password === this.loginForm.value.password
+        });
+        if(user) {
+          this.toast.success("Succesfully login")
+          this.router.navigate(['meeting']);
+        } else {
+          this.toast.error("failed login")
+        }
+      })
+
+    }
+
 }

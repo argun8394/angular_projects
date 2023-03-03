@@ -1,0 +1,75 @@
+<div>
+  <button class="btn btn-success ms-3 mt-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    (click)="clickAddMeeting()">Add
+    Meeting</button>
+</div>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Meeting Name</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Comment</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of meetingData">
+      <td>{{item.id}}</td>
+      <td>{{item.meetingName}}</td>
+      <td>{{item.startDate | date :'mediumDate'}}</td>
+      <td>{{item.endDate | date :'mediumDate'}}</td>
+      <td>{{item.comment}}</td>
+      <td>
+        <button class="btn btn-outline-info btn-sm me-2" type="button" data-bs-toggle="modal"
+          data-bs-target="#exampleModal" (click)="onEdit(item)">Edit</button>
+        <button class="btn btn-outline-danger btn-sm" (click)="deleteMeeting(item)">Delete</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Meeting Detail</h1>
+        <button type="button" #closeModal class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="formValue">
+          <div class="form-group">
+            <label for="meetingName">meetingName</label>
+            <input class="form-control" id="meetingName" type="text" formControlName="meetingName" />
+          </div>
+          <div class="form-group">
+            <label for="startDate">startDate</label>
+            <input class="form-control" id="startDate" type="date" formControlName="startDate" />
+          </div>
+          <div class="form-group">
+            <label for="endDate">endDate</label>
+            <input class="form-control" id="endDate" type="date" formControlName="endDate" />
+          </div>
+          <div class="form-group">
+            <label for="comment">comment</label>
+            <input class="form-control" id="comment" type="text" formControlName="comment" />
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)=" postMeeting()">Add</button>
+        <button *ngIf="showUpdate" #closeModal type="button" class="btn btn-primary"
+          (click)=" updateMeeting()">Update</button>
+
+      </div>
+    </div>
+  </div>
+</div>
