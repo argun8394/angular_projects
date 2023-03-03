@@ -29,11 +29,11 @@ export class SignupComponent implements OnInit {
     // })
 
     this.signupForm = this.fb.group({
-      firstName: [''],
-      lastName: [''],
-      mobile: [''],
-      email: [''],
-      password: [''],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      mobile: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -42,6 +42,7 @@ export class SignupComponent implements OnInit {
       next: (res) => {
         this.toast.success('User registration successfully');
         this.signupForm.reset();
+        this.router.navigate(['login'])
       },
       error: () => {
         this.toast.error('User registration has error');

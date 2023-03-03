@@ -12,4 +12,8 @@ export class ApiService {
     return this.http.post<any>('http://localhost:3000/user',data)
   }
 
+  getUser(){
+    return this.http.get('http://localhost:3000/user')
+  }
+
 }
