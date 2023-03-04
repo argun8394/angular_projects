@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -17,11 +18,14 @@ export class MeetingComponent {
   meetingData: any;
   showAdd: boolean;
   showUpdate: boolean;
+  name: string = '';
+  file: any;
 
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
-    private toast: ToastrService
+    private toast: ToastrService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -109,4 +113,6 @@ export class MeetingComponent {
       }
     );
   }
+
+
 }

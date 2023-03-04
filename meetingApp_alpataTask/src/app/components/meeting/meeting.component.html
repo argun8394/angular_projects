@@ -12,6 +12,7 @@
       <th scope="col">Start Date</th>
       <th scope="col">End Date</th>
       <th scope="col">Comment</th>
+      <th scope="col">File Upload</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -23,6 +24,11 @@
       <td>{{item.startDate | date :'mediumDate'}}</td>
       <td>{{item.endDate | date :'mediumDate'}}</td>
       <td>{{item.comment}}</td>
+      <td>
+
+
+
+      </td>
       <td>
         <button class="btn btn-outline-info btn-sm me-2" type="button" data-bs-toggle="modal"
           data-bs-target="#exampleModal" (click)="onEdit(item)">Edit</button>
@@ -60,12 +66,13 @@
             <label for="comment">comment</label>
             <input class="form-control" id="comment" type="text" formControlName="comment" />
           </div>
+
         </form>
 
       </div>
       <div class="modal-footer">
         <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)=" postMeeting()">Add</button>
+        <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="postMeeting()">Add</button>
         <button *ngIf="showUpdate" #closeModal type="button" class="btn btn-primary"
           (click)=" updateMeeting()">Update</button>
 

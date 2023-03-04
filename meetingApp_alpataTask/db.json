@@ -7,24 +7,17 @@
       "email": "test@test.com",
       "password": "123456",
       "id": 1
-    }
-  ],
-  "meeting": [
-    {
-      "id": 1,
-      "meetingName": "sadad",
-      "startDate": "2023-03-04",
-      "endDate": "2023-03-16",
-      "comment": "asdasdsadsa"
     },
     {
-      "id": 2,
-      "meetingName": "toplantı",
-      "startDate": "2023-03-09",
-      "endDate": "2023-03-24",
-      "comment": "aylık toplantııııııııııı"
+      "firstName": "ali",
+      "lastName": "argun",
+      "mobile": "+90 536 583 30 49",
+      "email": "argun@gmail.com",
+      "password": "123456",
+      "id": 2
     }
   ],
+  "meeting": [],
   "posts": [
     {
       "id": 1,

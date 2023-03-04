@@ -48,6 +48,6 @@ export class SignupComponent implements OnInit {
         this.toast.error('User registration has error');
       },
     });
-    console.log(this.signupForm.value);
+    // console.log(this.signupForm.value);
   }
 }

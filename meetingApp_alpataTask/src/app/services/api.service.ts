@@ -45,4 +45,8 @@ export class ApiService {
     }))
   }
 
+  postFile(file:any){
+    this.http.post('http://localhost:3000/file',file)
+  }
+
 }
