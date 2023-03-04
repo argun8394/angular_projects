@@ -17,7 +17,15 @@
       "id": 2
     }
   ],
-  "meeting": [],
+  "meeting": [
+    {
+      "id": 1,
+      "meetingName": "daily meeting",
+      "startDate": "2023-03-06",
+      "endDate": "2023-03-15",
+      "comment": "project plan"
+    }
+  ],
   "posts": [
     {
       "id": 1,
