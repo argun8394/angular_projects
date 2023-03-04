@@ -1,10 +1,30 @@
 # MeetingAppAlpataTask
 
+## Used Packages And Modules
+* AppRoutingModule
+* HttpClientModule
+* ReactiveFormsModule
+* FormsModule
+* Rxjs
+* Ngx-Toastr
+* Bootstrap 5
+* JSON-Server
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
-## Development server
+## Getting Started
+### Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Run npm i or npm install to install all packages then You should use ng serve --o.
+* Run db.json you should use `json-server --watch db.json`. Navigate to `http://localhost:3000/`
+
+## Prerequisites
+* npm
+* Angular 15
+* Bootstrap 5
+* Vs Code
 
 ## Code scaffolding
 
